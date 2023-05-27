@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="main">
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="file-upload">
+            <input type="file" name="file" title="upload Image" placeholder="Please Upload image"
+                   onchange="loadFile(event)" id="file"/>
+            <img id="uploaded-image" src="" alt="Uploaded Image" height="100%">
+        </div>
+        <div class="wrap">
+            <button type="submit">Predict</button>
+            <button type="reset" onclick="clearImage()">Clear</button>
+        </div>
+    </form>
+    <div class="result">
+        <header>Result</header>
+        <p>{{result}}</p>
+    </div>
+</div>
+
+{% endblock %}
